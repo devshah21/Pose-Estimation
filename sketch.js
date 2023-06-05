@@ -6,11 +6,11 @@ let leyeX,leyeY;
 let singlePose,skeleton;
 
 function setup() {
-    createCanvas(800, 500);
+    createCanvas(800, 800);
     capture = createCapture(VIDEO)
     capture.hide()
     posenet = ml5.poseNet(capture, modelLoaded);
-    posenet.on('pose', receivedPoses)
+    posenet.on('pose', receivedPoses);
 }
 
 function receivedPoses(poses) { 
@@ -23,11 +23,11 @@ function receivedPoses(poses) {
 }
 
 function modelLoaded() {
-    console.log('Model Loaded!');
+    console.log('Model has loaded');
   }
 
 function draw() {
-    image(capture, 0, 0, 800, 600);
+    image(capture, 0, 0);
     fill(255, 0, 0)
 
     if(singlePose){
