@@ -1,10 +1,11 @@
+let capture;
+
 function setup() {
     createCanvas(800, 500);
-    console.log('setup function');
+    capture = createCapture(VIDEO)
 }
 
 function draw() {
-    fill(255);
-    ellipse(mouseX, mouseY, 50, 50);
+    image(capture, 0, 0, 800, 600);
 }
 
