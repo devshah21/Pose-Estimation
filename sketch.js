@@ -4,7 +4,7 @@ function setup() {
 }
 
 function draw() {
-    console.log('draw function');
-
-
+    fill(255);
+    ellipse(mouseX, mouseY, 50, 50);
 }
+
