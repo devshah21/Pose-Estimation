@@ -65,23 +65,22 @@ function draw() {
     }
 
     // Check sitting posture and provide feedback
-    const shoulderWidth = rightShoulderX - leftShoulderX;
+    const shoulderWidth = leftShoulderX - rightShoulderY;
     const faceOffset = abs(faceX - chestX);
+    console.log(faceOffset)
 
-    if (shoulderWidth < 100) {
-      // Shoulder width too narrow, slouching
+    if (shoulderWidth < 1) {
+      // Shoulder width too narrow, potentially slouching
       fill(255, 0, 0);
       textSize(24);
-      text("Sit up straight, widen your shoulders", 10, 30);
-    } else if (faceOffset > 50) {
-      // Face is too far from the chest, leaning forward
+      console.log('check')
+      text("Check your sitting posture; your shoulders are too narrow", 10, 30);
+    } else if (faceOffset < 115) {
+      // Face is too far from the chest, potentially leaning forward
       fill(255, 0, 0);
       textSize(24);
-      text(
-        "Lean back, keep your face closer to your chest",
-        10,
-        30
-      );
+      console.log('check3')
+      text("Check your sitting posture; your face is too far from chest.", 10, 30);
     } else {
       // Good sitting posture
       fill(0, 255, 0);
