@@ -67,15 +67,14 @@ function draw() {
     // Check sitting posture and provide feedback
     const shoulderWidth = leftShoulderX - rightShoulderY;
     const faceOffset = abs(faceX - chestX);
-    console.log(faceX, chestX)
     console.log(faceOffset)
 
-    if (shoulderWidth > 125) {
+    if (shoulderWidth > 138) {
       // Shoulder width too narrow, potentially slouching
       fill(255, 0, 0);
       textSize(24);
       text("Check your sitting posture; your shoulders are too narrow", 10, 30);
-    } else if (faceOffset < 145) {
+    } else if (faceOffset < 115) {
       // Face is too far from the chest, potentially leaning forward
       fill(255, 0, 0);
       textSize(24);
